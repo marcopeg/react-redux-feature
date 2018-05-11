@@ -34,8 +34,8 @@ const createConnectStore = (registerFn) => {
             // It prevents multiple executions of the `registerFn`
             componentWillMount () {
                 if (registerFn) {
-                    if (!registerFn.hasFired) {
-                        registerFn.hasFired = true
+                    if (this.store.registeredFeatures.indexOf(registerFn) === -1) {
+                        this.store.registeredFeatures.push(registerFn)
                         registerFn(this.store)
                     }
                 }

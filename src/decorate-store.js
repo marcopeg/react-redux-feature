@@ -6,6 +6,7 @@ export const decorateStore = ({ store, history, events, initialReducers }) => {
     store.registeredServices = []
     store.registeredListeners = []
     store.syncFeatures = []
+    store.registeredFeatures = []
 
     // add reducer registry to allow inject new reducers
     store.reducersRegistry = new ReducerRegistry()
@@ -72,7 +73,7 @@ export const decorateStore = ({ store, history, events, initialReducers }) => {
     store.registerAsyncFeature = async (feature) => {
         // inject stores
         for (const reducer in feature.reducers) {
-            store.registerReducer(reducer, feature.reducers[reducer])
+            await store.registerReducer(reducer, feature.reducers[reducer])
         }
 
         // register listeners
