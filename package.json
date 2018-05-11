@@ -1,0 +1,43 @@
+{
+  "name": "react-redux-feature",
+  "version": "0.0.2",
+  "description": "A proposal for a feature centric React/Redux app",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "es2017"
+    ],
+    "plugins": [
+      ["transform-object-rest-spread", { "useBuiltIns": true }],
+      ["transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      }]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcopeg/react-redux-feature.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcopeg/react-redux-feature/issues"
+  },
+  "homepage": "https://github.com/marcopeg/react-redux-feature#readme",
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1"
+  }
+}
