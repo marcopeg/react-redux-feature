@@ -93,6 +93,11 @@ export const decorateStore = ({ store, history, events, initialReducers }) => {
                 await service.start(store, history)(store.dispatch, store.getState)
             }
         }
+
+        // feature onLoad hook
+        if (feature.onLoad) {
+            await feature.onLoad(store, history)(store.dispatch, store.getState)
+        }
     }
 
     return store
