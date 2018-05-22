@@ -14,7 +14,10 @@ export const decorateStore = ({ store, history, events, initialReducers }) => {
         store.replaceReducer(recombine(reducers, initialReducers))
     })
 
-    store.registerReducer = (key, fn) => store.reducersRegistry.register(key, fn)
+    store.registerReducer = (key, fn) => new Promise((resolve, reject) => {
+        store.reducersRegistry.register(key, fn)
+        setTimeout(() => setTimeout(resolve))
+    })
 
     store.registerService = async (service) => {
         // prevent multiple initialization
