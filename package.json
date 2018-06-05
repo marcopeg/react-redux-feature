@@ -1,6 +1,6 @@
 {
   "name": "react-redux-feature",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A proposal for a feature centric React/Redux app",
   "main": "index.js",
   "scripts": {

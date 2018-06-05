@@ -74,6 +74,10 @@ export const decorateStore = ({ store, history, events, initialReducers }) => {
     }
 
     store.registerAsyncFeature = async (feature) => {
+        // handle singleton register
+        if (store.registeredFeatures.indexOf(feature) !== -1) return
+        store.registeredFeatures.push(store.registeredFeatures)
+
         // inject stores
         for (const reducer in feature.reducers) {
             await store.registerReducer(reducer, feature.reducers[reducer])
