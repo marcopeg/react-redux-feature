@@ -1,12 +1,25 @@
 {
   "name": "react-redux-feature",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "A proposal for a feature centric React/Redux app",
   "main": "index.js",
   "scripts": {
     "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react",
+    "redux",
+    "reducer",
+    "thunk",
+    "feature",
+    "async",
+    "actions",
+    "listeners",
+    "events",
+    "store",
+    "state"
+  ],
   "babel": {
     "presets": [
       "es2015",
@@ -30,10 +43,9 @@
     "url": "https://github.com/marcopeg/react-redux-feature/issues"
   },
   "homepage": "https://github.com/marcopeg/react-redux-feature#readme",
-  "dependencies": {
-    "babel-runtime": "^6.26.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-runtime": "^6.26.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
